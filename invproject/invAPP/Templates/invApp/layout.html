@@ -1,39 +1,55 @@
 <! DECOTYPE html>
     <!DOCTYPE html>
     <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %} Inventory App {% endblock %}</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <style>
-        body {
-            padding-top: 100px; /* Increased to 100px to ensure full visibility */
-        }
-    </style>
-</head>
-<body style="padding-top: 100px;"> <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a href="{% url 'home' %}" class="navbar-brand">Inventory App</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title%}
+            Iventory App
+        {% endblock %}
+        </title>
+        <link href="
+       https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css
+" rel="stylesheet">
+      <style>
+            
+      <style>
+    body {
+        padding-top: 80px; /* This pushes your content down so the navbar is visible */
+    }
+</style>
+
+    </head>
+    <body>
+          </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+         <a href="{% url 'home' %}" class="navbar-brand"> Inventory App </a>
+        <button class="navbar-toggler" type= "button" data-toggle="collapse" data-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false"aria-lebel="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+             <ul>
                 <li class="nav-item">
-                    <a href="{% url 'product_create' %}" class="nav-link">Add Product</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'product_list' %}" class="nav-link">Show Product</a>
-                </li>
-            </ul>
-        </div>
+                     <a href="{% url 'product_create' %}" class="nav-link"> Add Product</a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="{% url 'product_list' %}" class="nav-link"> Show Product</a>
+                 </li>
+             </ul>
+
+         </div>     
     </nav>
 
     <div class="container">
-        {% block content %}
-        {% endblock %}
+         {% block content %}
+      
+          {% endblock %}
     </div>
+          <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js" integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+          <script src="
+                   https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+    </body>
     </html>
