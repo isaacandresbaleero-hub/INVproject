@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'invAPP',
     'crispy_forms',
-    'crispy_bootsrap5',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
