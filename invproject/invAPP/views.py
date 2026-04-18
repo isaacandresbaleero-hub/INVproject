@@ -14,16 +14,16 @@ def home_view(request):
 def product_create_view(request):
     form = ProductForm()
     if request.method == 'POST':
-        form = ProductForm(request.form)
+        form = ProductForm(request.POST)
         if form .is_valid():
             form.save()
-            return ridirect ('product_list')
+            return redirect ('product_list')
     return render(request, 'invApp/product_form.html', {'form':form})
     
 #Read View 
 def product_list_view(request):
-    product = products.objects.all()
-    return render(request, 'InvApp/product_list.html', {'products':product})
+    products = product.objects.all()
+    return render(request, 'InvApp/product_list.html', {'products':products})
 
 #Update View 
 def product_update_view(request):

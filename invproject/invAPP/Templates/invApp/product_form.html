@@ -1,0 +1,18 @@
+<!-- extend  the baselayout from the layout.html-->
+
+{% extends "invApp/layout.html" %}
+
+{% block title %} home {% endblock %}
+
+{% block content %}
+
+<h1 class="text-center"> product form </h1>
+<form method="POST" class="jumbotron">
+      {%  csrf_token  %}  
+      {{form}}  
+      <button class="btn btn-success btn-block" type="submit">save product</button>
+
+</form>
+
+
+{% endblock %}
