@@ -26,22 +26,27 @@ def product_list_view(request):
     return render(request, 'InvApp/product_list.html', {'products':products})
 
 #Update View 
-def product_update_view(request):
-    product.objects.get(product_id=product_id )
-    form = ProductForm(instance = product)
+# 1. Add 'product_id' as a parameter
+def product_update_view(request, product_id):
+    # 2. Assign the result of the query to a variable named 'obj'
+    obj = product.objects.get(product_id=product_id)
+    
+    # 3. Use 'obj' as the instance for your form
+    form = ProductForm(instance=obj)
+    
     if request.method == "POST":
-        ProductForm(request.POST, instance=product)
+        form = ProductForm(request.POST, instance=obj)
         if form.is_valid():
             form.save()
             return redirect('product_list')
-    return render(request, 'invApp/product_form.html', {'form':form})
+            
+    return render(request, 'invApp/product_form.html', {'form': form})
 
 #Delete View 
 def product_delete_view(request, product_id):
-    product.objects.get(product_id=product_id )
-    form = ProductForm(instance = product)
+    obj = product.objects.get(product_id=product_id)
     if request.method == "POST":
-        Product.delete()
+        obj.delete()
         return redirect('product_list')
     
     return render (request, 'invApp/product_comfirm_delete.html', {'products':product})

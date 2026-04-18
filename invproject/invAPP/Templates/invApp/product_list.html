@@ -34,6 +34,10 @@
                         <td>{{ product.supplier }}</td>
                         <td class="text-center">
                             <a href="{% url 'product_update' product.product_id %}" class="btn btn-sm btn-outline-warning">Update</a>
+                            
+                            <a href="{% url 'product_delete' product.product_id %}" class="btn btn-sm btn-outline-danger">
+            Delete
+        </a>
                         </td>
                     </tr>
                     {% empty %}
