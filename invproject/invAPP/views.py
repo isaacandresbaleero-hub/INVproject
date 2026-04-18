@@ -1,4 +1,4 @@
-from django.shortcuts import render, ridirect
+from django.shortcuts import render, redirect
 
 from .forms import ProductForm
 from .models import product
@@ -13,12 +13,12 @@ def home_view(request):
 #Home Iview
 def product_create_view(request):
     form = ProductForm()
-    if request.method = 'POST'
+    if request.method == 'POST':
         form = ProductForm(request.form)
         if form .is_valid():
             form.save()
             return ridirect ('product_list')
-    return render(request, 'invApp/product_form.html' {'form':form})
+    return render(request, 'invApp/product_form.html', {'form':form})
     
 #Read View 
 def product_list_view(request):
@@ -32,9 +32,9 @@ def product_update_view(request):
     if request.method == "POST":
         ProductForm(request.POST, instance=product)
         if form.is_valid():
-            form.save():
+            form.save()
             return redirect('product_list')
-    return render(request, 'invApp/product_form.html' {'form':form})
+    return render(request, 'invApp/product_form.html', {'form':form})
 
 #Delete View 
 def product_delete_view(request, product_id):

@@ -2,17 +2,17 @@ from django import forms
 from .models import product
 
 #define a form
-class ProductForm(forms.modelform):
-    class meta:
+class ProductForm(forms.ModelForm):
+    class Meta:
         model = product
-        fields = __all__
-        lebels + {
-            'product_id' = 'product ID'
-            'name' = 'name'
-            'sku' = 'sku'
-            'price' = 'price'
-            'quantity' = 'quan'
-            'supplier' = 'product ID'
+        fields = "__all__"
+        labels = {
+            'product_id': 'product ID',
+            'name': 'name',
+            'sku': 'sku',
+            'price': 'price',
+            'quantity': 'quantity',
+            'supplier': 'supplier name',
 
         }
 
